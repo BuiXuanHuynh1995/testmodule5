@@ -1,0 +1,27 @@
+<h3 style="text-align: center">Thêm sách mới</h3>
+<div [hidden]="submitted" style="width: 400px;" class="container">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>Tên sách</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="book.title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label>Tác giả</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="book.author" name="author">
+    </div>
+
+    <div class="form-group">
+      <label>Mô tả</label>
+      <textarea cols="50" rows="10" type="text" class="form-control" id="emailId" required [(ngModel)]="book.description"
+                name="description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Thêm sách</button>
+    <button routerLink="/" class="btn btn-success" style="margin-left: 50px">Thoát</button>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h4>Thành công!</h4>
+</div>

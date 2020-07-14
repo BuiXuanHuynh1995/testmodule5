@@ -1,0 +1,29 @@
+<div class="panel panel-primary" xmlns:text-align="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h2 style="text-align: center">Danh sách cuốn sách</h2>
+  </div>
+  <div class="container">
+      <span style="font-weight: bold">Có {{bookLength}} cuốn sách <button class="btn badge-success" routerLink="/add" style="margin-left: 60%">Thêm mới sách</button></span>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Tên sách</th>
+        <th>Tác giả</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books; index as i">
+        <td>{{i+1}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td><button (click)="deleteBook(i)" class="btn btn-danger">Delete</button>
+          <button (click)="updateBook(book.id)" class="btn btn-warning" style="margin-left: 10px">Update</button>
+          <button (click)="bookDetail(book.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
